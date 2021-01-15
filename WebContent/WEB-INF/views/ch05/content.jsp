@@ -41,7 +41,7 @@
 					<div class="sector">
 						<h5>HttpServletRequest를 이용</h5>
 						<div>
-							<a class="btn btn-info btn-sm" href="method5">쿠키 읽기</a>
+							<a class="btn btn-info btn-sm" href="method4">쿠키 읽기</a>
 						</div>
 					</div>
 					
