@@ -27,8 +27,37 @@
 					
 					<div class="sector">
 						<h5>의존성 주입</h5>
-						
-					</div>					
+						<div>
+							<a class="btn btn-success btn-sm" href="service1">Ch13Service1 사용</a>
+							<a class="btn btn-success btn-sm" href="service2">Ch13Service2 사용</a>
+						</div>
+					</div>				
+					<div class="sector">
+						<h5>XML을 이용한 Setter 주입</h5>
+						<div>
+							<a class="btn btn-success btn-sm" href="service3">Ch13Service3 사용</a>
+							<a class="btn btn-success btn-sm" href="service4">Ch13Service4 사용</a>
+						</div>
+					</div>
+					<div class="sector">
+						<h5>DAO -> Service -> Controller 주입</h5>
+						<div>
+							<a class="btn btn-success btn-sm" href="service5">Ch13Service5 사용</a>
+						</div>
+					</div>
+					
+					<div class="sector">
+						<h5>인터페이스 타입 주입</h5>
+						<div>
+							<a class="btn btn-success btn-sm" href="service6">Ch13Service6 사용</a>
+						</div>
+					</div>	
+					<div class="sector">
+						<h5>Properties 값 주입</h5>
+						<div>
+							<a class="btn btn-success btn-sm" href="fileupload">변경될 수 있는 값 주입</a>
+						</div>
+					</div>	
 				</div>
 			</div>
 		</div>
