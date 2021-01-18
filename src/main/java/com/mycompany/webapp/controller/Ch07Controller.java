@@ -61,7 +61,7 @@ public class Ch07Controller {
 			board.setDate(new Date());
 			list.add(board);
 		}
-		model.addAttribute("boardList",list);
+		model.addAttribute("boardList1",list);
 		return "ch07/el";
 	}
 

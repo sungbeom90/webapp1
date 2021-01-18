@@ -56,7 +56,7 @@
 									<th>글쓴이</th>
 									<th>날짜</th>
 								</tr>									
-								<c:forEach var="board" items="${boardList}">
+								<c:forEach var="board" items="${boardList1}">
 									<tr>
 										<td>${board.no}</td>
 										<td>${board.title}</td>

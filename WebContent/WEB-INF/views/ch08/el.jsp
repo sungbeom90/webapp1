@@ -37,11 +37,11 @@
 					<div class="sector">
 						<h5>EL(Expressions Language) 객체의 데이터 읽기</h5>
 						<div>
-							<div>번호: ${board1.no}</div>
-							<div>제목: ${board1.title}</div>
-							<div>내용: ${board1.content}</div>
-							<div>글쓴이: ${board1.writer}</div>
-							<div>날짜: ${board1.date}</div>
+							<div>번호: ${board2.no}</div>
+							<div>제목: ${board2.title}</div>
+							<div>내용: ${board2.content}</div>
+							<div>글쓴이: ${board2.writer}</div>
+							<div>날짜: ${board2.date}</div>
 						</div>
 					</div>
 					
@@ -56,7 +56,7 @@
 									<th>글쓴이</th>
 									<th>날짜</th>
 								</tr>									
-								<c:forEach var="board" items="${boardList}">
+								<c:forEach var="board" items="${boardList2}">
 									<tr>
 										<td>${board.no}</td>
 										<td>${board.title}</td>

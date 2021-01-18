@@ -45,7 +45,7 @@ public class Ch08Controller {
 		board.setContent("과제하면 덜 추워요. 과제 내 주세요");
 		board.setWriter("감자바");
 		board.setDate(new Date());
-		session.setAttribute("board1",board);		
+		session.setAttribute("board2",board);		
 		
 		return "ch08/el";
 	}
@@ -64,7 +64,7 @@ public class Ch08Controller {
 			board.setDate(new Date());
 			list.add(board);
 		}
-		session.setAttribute("boardList",list);
+		session.setAttribute("boardList2",list);
 		return "ch08/el";
 	}
 	
