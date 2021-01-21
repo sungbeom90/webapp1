@@ -40,11 +40,10 @@ public class Ch14Controller {
 		} catch (SQLException e) {
 			logger.info("연결실패");
 			e.printStackTrace();
-		} finally {
-			
 		}
 		return "ch14/content";
 	}
+	
 	@Resource
 	private Ch14EmployeeDao employeeDao;
 	
