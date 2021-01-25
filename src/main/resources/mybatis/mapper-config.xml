@@ -4,7 +4,8 @@
 			"http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias alias="employee" type="com.mycompany.webapp.dto.Ch14Employee"/>		
+		<typeAlias alias="employee" type="com.mycompany.webapp.dto.Ch14Employee"/>
+		<typeAlias alias="board" type="com.mycompany.webapp.dto.Ch14Board"/>			
 	</typeAliases>
 
 </configuration>
