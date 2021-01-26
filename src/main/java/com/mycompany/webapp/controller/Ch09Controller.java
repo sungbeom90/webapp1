@@ -88,7 +88,7 @@ public class Ch09Controller {
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
-		response.setHeader("Content-Disposition", "attachment; filename=\""+photo+"\"");
+		response.setHeader("Content-Disposition", "attachment; filename=\""+photo+"\"");  //오리지널 파일네임으로 받게 하기 위해서
 		
 		try {
 			OutputStream os= response.getOutputStream();

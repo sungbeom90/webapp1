@@ -5,19 +5,16 @@
 	<h3>Spring Framework</h3>
 	<div class="loginBox">
 		<div>
-			<c:if test="${loginStatus == null}">
+			<c:if test="${sessionMid == null}">
 				<div>
-					<form method="post" action="<%=application.getContextPath()%>/ch08/login">
-						<input type="text" name="uid" placeholder="아이디"/><br/>
-						<input type="password" name="upassword" placeholder="비밀번호"/><br/>
-						<button class="btn btn-success btn-sm">로그인</button>
-					</form>
+					<a class="btn btn-danger btn-sm" href="<%=application.getContextPath()%>/ch14/join">회원가입</a>
+					<a class="btn btn-danger btn-sm" href="<%=application.getContextPath()%>/ch14/login">로그인</a>
 				</div>
 			</c:if>
-			<c:if test="${loginStatus != null}">
+			<c:if test="${sessionMid != null}">
 				<div>
-					<img src="<%=application.getContextPath()%>/resources/img/myphoto.png" width="50px"/>
-					<a class="btn btn-danger btn-sm" href="<%=application.getContextPath()%>/ch08/logout">로그아웃</a>
+					<img src="<%=application.getContextPath()%>/ch14/mphoto" width="50px"/>
+					<a class="btn btn-danger btn-sm" href="<%=application.getContextPath()%>/ch14/logout">로그아웃</a>
 				</div>
 			</c:if>
 		</div>		
