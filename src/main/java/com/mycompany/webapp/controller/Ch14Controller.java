@@ -7,6 +7,7 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -31,10 +32,13 @@ import org.springframework.web.multipart.MultipartFile;
 import com.mycompany.webapp.dto.Ch14Board;
 import com.mycompany.webapp.dto.Ch14Employee;
 import com.mycompany.webapp.dto.Ch14Member;
+import com.mycompany.webapp.dto.Ch14Order;
+import com.mycompany.webapp.dto.Ch14OrderItem;
 import com.mycompany.webapp.dto.Ch14Pager;
 import com.mycompany.webapp.service.Ch14BoardService;
 import com.mycompany.webapp.service.Ch14EmployeeService;
 import com.mycompany.webapp.service.Ch14MemberService;
+import com.mycompany.webapp.service.Ch14OrderService;
 
 @Controller
 @RequestMapping("/ch14")
@@ -354,6 +358,57 @@ public class Ch14Controller {
 	public String boarddelete(int bno) {
 		boardService.deleteBoard(bno);
 		return "redirect:/ch14/boardlist2";
+	}
+	
+	@GetMapping("/battach")
+	public void battach(int bno, HttpServletResponse response) throws Exception{
+		Ch14Board board= boardService.getboard(bno);
+		
+			String battachsname = board.getBattachsname();		
+			String filePath = "D:/MyWorkspace/uploadfiles/boards/" + battachsname;		
+		
+			response.setContentType(board.getBattachtype()); //받아올 사진타입을 받아오기 위함.
+			
+			String oname = board.getBattachoname();
+			oname=new String(oname.getBytes("UTF-8"), "ISO-8859-1");  // 한글 파일명을 살리기 위함.
+			response.setHeader("Content-Disposition", "attachment; filename=\""+oname+"\"");  //원본이름으로 주기위함
+			
+		
+		OutputStream os= response.getOutputStream();
+		InputStream is = new FileInputStream(filePath);
+		
+		FileCopyUtils.copy(is, os);
+		os.flush();
+		os.close();
+		is.close();
+		}
+	
+	
+	@Resource
+	private Ch14OrderService orderService;
+	
+	@GetMapping("/order")
+	public String order() {
+		//주문 정보 얻기    (테스트이므로 강제로 넣어주었음.)
+		Ch14Order order = new Ch14Order();
+		order.setMid("winter");
+		order.setAddress("서울시 송파구");
+		
+		//주문 상품 정보 얻기     (장바구니에서 가져와야함)
+		List<Ch14OrderItem> orderItems = new ArrayList<>();
+		Ch14OrderItem oi1 = new Ch14OrderItem();
+		oi1.setPid("다이아몬드");
+		oi1.setAmount(100);
+		orderItems.add(oi1);
+		Ch14OrderItem oi2 = new Ch14OrderItem();
+		oi2.setPid("압구정 아파트");
+		oi2.setAmount(10);
+		orderItems.add(oi2);
+		
+		//주문 처리
+		orderService.order(order, orderItems);		
+		
+		return "ch14/content";
 	}
 	
 	

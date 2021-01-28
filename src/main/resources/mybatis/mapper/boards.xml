@@ -26,7 +26,7 @@
 	</select>
 	
 	<select id="selectByPk" parameterType="int" resultType="board">
-		select bno, btitle, bcontent, bwriter, bhitcount, bdate
+		select bno, btitle, bcontent, bwriter, bhitcount, bdate, battachsname, battachoname, battachtype
 		from boards
 		where bno=#{bno}
 	</select>
